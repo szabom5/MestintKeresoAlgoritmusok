@@ -13,29 +13,30 @@ public class ToltOperator implements Operator{
     this.j = j;
   }
 
-  private int m(int i, int j, Allapot allapot) {
+  private int mozgatottFolyadek(int i, int j, Allapot allapot) {
     int[] a = ((KorsoAllapot)allapot).a;
-    int[] h = {0, 5, 3, 2}; // a korsok kapacitasa
+    int[] h = { 5, 3, 2}; // a korsok kapacitasa
 
     return Math.min(a[i], h[j] - a[j]);
   }
 
   @Override
   public boolean alkalmazhato(Allapot allapot) {
-    return m(i, j, allapot) > 0;
+    return mozgatottFolyadek(i, j, allapot) > 0;
   }
 
   @Override
   public Allapot alkalmaz(Allapot eredetiAllapot) {
+
     KorsoAllapot ujAllapot = new KorsoAllapot();
     int[] a = ((KorsoAllapot)eredetiAllapot).a;
     int[] b = ujAllapot.a;
 
-    for (int l = 1; l <= 3; l++) {
+    for (int l = 0; l < 3; l++) {
       if (l == j) {
-        b[l] = a[l] + m(i, j, eredetiAllapot);
+        b[l] = a[l] + mozgatottFolyadek(i, j, eredetiAllapot);
       } else if (l == i) {
-        b[l] = a[l] - m(i, j, eredetiAllapot);
+        b[l] = a[l] - mozgatottFolyadek(i, j, eredetiAllapot);
       } else {
         b[l] = a[l];
       }

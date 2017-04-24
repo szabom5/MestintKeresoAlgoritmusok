@@ -4,31 +4,25 @@ import hu.marianna.problema.Allapot;
 
 public class KorsoAllapot implements Allapot {
 
-  int a[] = new int[4];
-
-	/*
-        boolean kenyszerfeltetel() {
-		return a[1]+a[2]+a[3] == 5;
-	}
-	*/
+  int a[] = new int[3];
 
   public KorsoAllapot() {
-    a[1] = 5;
+    a[0] = 5;
+    a[1] = 0;
     a[2] = 0;
-    a[3] = 0;
   }
 
   @Override
   public boolean celAllapot() {
-    return a[1] == 4;
+    return a[0] == 4;
   }
 
   @Override
   public String toString() {
-    StringBuffer sb = new StringBuffer(7);
-    sb.append("(").append(a[1]);
-    sb.append(",").append(a[2]);
-    sb.append(",").append(a[3]).append(")");
+    StringBuffer sb = new StringBuffer();
+    sb.append("(").append(a[0]);
+    sb.append(",").append(a[1]);
+    sb.append(",").append(a[2]).append(")");
     return sb.toString();
   }
 
@@ -39,7 +33,7 @@ public class KorsoAllapot implements Allapot {
     }
 
     int b[] = ((KorsoAllapot) arg0).a;
-    for (int i = 1; i <= 3; i++) {
+    for (int i = 0; i < 3; i++) {
       if (a[i] != b[i]) {
         return false;
       }
@@ -50,7 +44,7 @@ public class KorsoAllapot implements Allapot {
 
   @Override
   public int hashCode() {
-    return a[1] * 100 + a[2] * 10 + a[3];
+    return a[0] * 100 + a[1] * 10 + a[2];
   }
 
   public int heurisztika() {
@@ -58,9 +52,8 @@ public class KorsoAllapot implements Allapot {
       return 0;
     }
 
-    return 40000 - (a[1] > 0 ? 1 : 0) - (a[2] > 0 ? 1 : 0) - (a[3] > 0 ? 1 : 0);
+    return 40000 - (a[0] > 0 ? 1 : 0) - (a[1] > 0 ? 1 : 0) - (a[2] > 0 ? 1 : 0);
   }
-
 
 }
 
