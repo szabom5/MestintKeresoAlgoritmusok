@@ -1,4 +1,4 @@
-package hu.marianna.kereso.modosithato;
+package hu.marianna.kereso.modosithato.visszalepeses;
 
 import java.util.List;
 import hu.marianna.problema.Allapot;
