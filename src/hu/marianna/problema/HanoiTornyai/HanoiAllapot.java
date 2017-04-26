@@ -23,6 +23,26 @@ public class HanoiAllapot implements Allapot {
   }
 
   @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+
+    HanoiAllapot that = (HanoiAllapot) o;
+
+    return Arrays.equals(a, that.a);
+
+  }
+
+  @Override
+  public int hashCode() {
+    return Arrays.hashCode(a);
+  }
+
+  @Override
   public String toString() {
     return Arrays.toString(a);
   }

@@ -1,5 +1,6 @@
 package hu.marianna.problema.NKiralyno;
 
+import java.util.Arrays;
 import hu.marianna.problema.Allapot;
 
 public class KiralynoAllapot implements Allapot {
@@ -51,6 +52,26 @@ public class KiralynoAllapot implements Allapot {
       }
     }
     return countZero;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+
+    KiralynoAllapot that = (KiralynoAllapot) o;
+
+    return Arrays.deepEquals(a, that.a);
+
+  }
+
+  @Override
+  public int hashCode() {
+    return Arrays.deepHashCode(a);
   }
 
   @Override
