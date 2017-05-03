@@ -17,6 +17,11 @@ public class HanoiOperator implements Operator {
   }
 
   @Override
+  public int koltseg() {
+    return 1;
+  }
+
+  @Override
   public boolean alkalmazhato(Allapot allapot) {
     int[] a = ((HanoiAllapot) allapot).a;
 

@@ -14,6 +14,11 @@ public class KiralynoOperator implements Operator {
   }
 
   @Override
+  public int koltseg() {
+    return 1;
+  }
+
+  @Override
   public boolean alkalmazhato(Allapot allapot) {
     return ((KiralynoAllapot) allapot).a[i][j] == 0;
   }

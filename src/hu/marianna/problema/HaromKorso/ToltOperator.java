@@ -21,6 +21,11 @@ public class ToltOperator implements Operator{
   }
 
   @Override
+  public int koltseg() {
+    return 1;
+  }
+
+  @Override
   public boolean alkalmazhato(Allapot allapot) {
     return mozgatottFolyadek(i, j, allapot) > 0;
   }

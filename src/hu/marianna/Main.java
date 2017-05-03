@@ -1,5 +1,7 @@
 package hu.marianna;
 
+import hu.marianna.kereso.modosithato.keresofa.BestFirst;
+import hu.marianna.kereso.modosithato.keresofa.Optimalis;
 import hu.marianna.kereso.modosithato.visszalepeses.AlapVisszalepeses;
 import hu.marianna.kereso.modosithato.keresofa.Melysegi;
 import hu.marianna.kereso.modosithato.keresofa.Szelessegi;
@@ -26,7 +28,11 @@ public class Main {
 
     Melysegi melysegi = new Melysegi();
 
-    szelessegi.keres(hanoiJatek);
+    Optimalis optimalis =  new Optimalis();
+
+    BestFirst bestFirst = new BestFirst();
+
+    bestFirst.keres(korsoJatek);
 
   }
 }
