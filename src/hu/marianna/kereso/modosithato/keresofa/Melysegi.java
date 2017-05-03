@@ -61,7 +61,7 @@ public class Melysegi implements KeresofavalKereso {
 
         Csomopont
             ujCsomopont =
-            new Csomopont(ujAllapot, kiterjesztendo, o, kiterjesztendo.melyseg + 1);
+            new Csomopont(ujAllapot, kiterjesztendo, o, kiterjesztendo.info + 1);
 
         //Csomopont equals method override
         if (!nyiltak.contains(ujCsomopont) && !zartak.contains(ujCsomopont)) {

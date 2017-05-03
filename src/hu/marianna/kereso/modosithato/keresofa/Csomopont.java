@@ -1,6 +1,5 @@
 package hu.marianna.kereso.modosithato.keresofa;
 
-import java.util.List;
 import hu.marianna.problema.Allapot;
 import hu.marianna.problema.Operator;
 
@@ -12,15 +11,19 @@ public class Csomopont {
   public Operator eloallitoOp;
 
 
-  public int melyseg;
+  //kiegeszito informaciok
+  //szelessegi es melysegi kereso eseten melysegi ertek
+  //optimalis kereso eseten utkoltseg
+  //best-first kereso eseten heurisztikus ertek
+  public int info;
 
   public Csomopont(Allapot allapot, Csomopont szulo,
                    Operator eloallitoOp,
-                    int melyseg) {
+                   int info) {
     this.allapot = allapot;
     this.szulo = szulo;
     this.eloallitoOp = eloallitoOp;
-    this.melyseg = melyseg;
+    this.info = info;
   }
 
   @Override
@@ -45,7 +48,7 @@ public class Csomopont {
 
   @Override
   public String toString() {
-    return allapot.toString();
+    return "(" + allapot.toString() + "," + info + ")";
   }
 
   public String megoldasString() {
