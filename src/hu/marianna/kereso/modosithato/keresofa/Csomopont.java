@@ -15,6 +15,7 @@ public class Csomopont {
   //szelessegi es melysegi kereso eseten melysegi ertek
   //optimalis kereso eseten utkoltseg
   //best-first kereso eseten heurisztikus ertek
+  //A algoritmus eseten az osszkoltseg = utkoltseg + heurisztikus ertek
   public int info;
 
   public Csomopont(Allapot allapot, Csomopont szulo,
